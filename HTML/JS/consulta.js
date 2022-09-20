@@ -32,8 +32,8 @@ function verPost(){
           },            
     ];
 
-var info="<table>";
-info=info + "<tr>"
+var info="<table class='table table-hover'>";
+info=info + "<tr class='table-primary'>"
 info=info + "<th>Id</th>"
 info=info + "<th>User ID</th>"
 info=info + "<th>Titulo</th>"
@@ -51,8 +51,48 @@ for(var i=0;i<listarpost.length;i++){
 
 info=info + "</table>"
 
-
-
 document.getElementById("información").innerHTML=info;
 
+}
+
+function limpiarTabla(){
+    var info="<h1>No hay información</h1>";
+    document.getElementById("información").innerHTML=info;
+}
+
+
+function consultaURL(){
+
+    var listarpost;
+    const url="https://jsonplaceholder.typicode.com/posts";
+    fetch(url)
+    .then(Response=>Response.json())
+    .then((data)=>
+    {
+        listarpost=data;
+        var info="<table class='table table-hover'>";
+info=info + "<tr class='table-primary'>"
+info=info + "<th>Id</th>"
+info=info + "<th>User ID</th>"
+info=info + "<th>Titulo</th>"
+info=info + "<th>Post</th>"
+info=info + "<th>Acciones</th>"
+info=info + "</tr>"
+
+for(var i=0;i<listarpost.length;i++){
+    info=info + "<tr>"
+    info=info + "<td>"+listarpost[i]["id"] +"</td>"
+    info=info + "<td>"+listarpost[i]["userId"] +"</td>"
+    info=info + "<td>"+listarpost[i]["title"] +"</td>"
+    info=info + "<td>"+listarpost[i]["body"] +"</td>"
+    info=info + "<td><button type='button' class='btn btn-primary btn-sm'>Editar</button><button type='button' class='btn btn-danger btn-sm'>Eliminar</button></td>"
+    info=info + "</tr>"
+}
+
+info=info + "</table>"
+
+document.getElementById("información").innerHTML=info;
+        
+    }
+    )
 }

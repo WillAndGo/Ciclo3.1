@@ -5,13 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/consulta.js"></script>
-    <link rel="stylesheet" href="css/estilo.css">
-    <title>Document</title>
+    <script src="js/imagenes.js"></script>
+    <!--<link rel="stylesheet" href="css/estilo.css">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Implementación JS</title>
 </head>
 <body>
     <h1>Lista de Post</h1>
+    
+    <!---
     <h2 onclick="verPost();">Ver Listado</h2>
-    <hr>
+    <h2 onclick="verAlbum();">Ver Album de Fotos</h2>
+    <h2 onclick="consultaURL();">Ver Post URL</h2>
+    <h2 onclick="consultaImgURL();">Ver Album URL</h2>
+    <h2 ondblclick="limpiarTabla();">Limpiar Tabla</h2>
+    -->
+    <button onclick="verPost();"type="button" class="btn btn-primary">Post</button>
+    <button onclick="verAlbum();"type="button" class="btn btn-secondary">Album</button>
+    <button onclick="consultaURL();"type="button" class="btn btn-success">Post URL</button>
+    <button onclick="consultaImgURL();"type="button" class="btn btn-info">Album URL</button>
+    <button onclick="limpiarTabla();"type="button" class="btn btn-warning">Limpiar</button>
+
+        
+<hr>
     <div id="información"></div>
+    <!---<h2 ondblclick="limpiarTabla();">Limpiar Tabla</h2>-->
+    <button onclick="limpiarTabla();"type="button" class="btn btn-warning">Limpiar</button>
 </body>
 </html>
